@@ -143,11 +143,11 @@
 
                 <div style="border-bottom:2px solid black;border-right:2px solid black;border-top:2px solid black;border-left:1px solid black;height:25px;">
 
-                    <div class="text-left" style="font-weight:bolder; color:#4f4b4b;width:25%;float:left;">
+                    <div class="text-left" style="font-weight:bolder; color:#4f4b4b;width:10%;float:left;">
                         <span>Código</span>
                     </div>
 
-                    <div class="text-left" style="font-weight:bolder; color:#4f4b4b;float:left;width:32%;">
+                    <div class="text-left" style="font-weight:bolder; color:#4f4b4b;float:left;width:42%;">
                         <span>Descripción</span>
                     </div>
 
@@ -197,7 +197,7 @@
 
                                         <!--Código -->
 
-                                    <div class="text-left" style="width:25%;float:left;clear:both;">
+                                    <div class="text-left" style="width:10%;float:left;clear:both;">
                                         <span t-field="ml.product_id.default_code"/>
                                         <br/>
                                     </div>
@@ -206,7 +206,7 @@
 
                                     <!-- Descripción -->
 
-                                    <div class="text-left" style="float:left;width:32%;">
+                                    <div class="text-left" style="float:left;width:42%;">
                                         <t t-set="productName" t-value="ml.move_id.sale_line_id.name"></t>
                                         <t t-set="lenProductName" t-value="len(productName)"></t>
                                         <t t-set="isCode" t-value="productName.find(']')"></t>
@@ -218,6 +218,20 @@
                                         <t t-if="isCode != -1">
                                             <spam t-esc="productName[isCode+1:lenProductName]"></spam>
                                         </t>
+
+                                        <!-- LOTE -->
+
+                                        <t t-if="ml.lot_id">
+
+                                            <i>
+                                                <span> </span>
+                                                <span style="color:#4f4b4b;">*LOTE:</span>
+                                                <span style="color:#4f4b4b;" t-field="ml.lot_id"> </span>
+                                            </i>
+
+                                        </t>
+
+                                        <!-- FIN LOTE -->
 
                                     </div>
 

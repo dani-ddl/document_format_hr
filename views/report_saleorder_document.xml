@@ -357,6 +357,9 @@
                     <p t-field="doc.signed_by"/>
                 </div>
             </div>
+            <p t-if="doc.payment_term_id.note">
+
+            </p>
             <div class="oe_structure"/>
 
         </div>
